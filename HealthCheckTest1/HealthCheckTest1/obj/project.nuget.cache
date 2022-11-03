@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "S3hcmW5gKRCDK0/szS+DByABiPNh/6JzZMGzuHxNpYKQYv4qk2GbNdJx5L/mAXcolYhPZ5rkKR/y2xKYWVrdBg==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\HealthChecks\\HealthCheckTest1\\HealthCheckTest1\\HealthCheckTest1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mark\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}
