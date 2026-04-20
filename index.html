@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Static Site</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a class="nav__logo" href="#">MySite</a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Build Something Great</h1>
+        <p class="hero__subtitle">A clean, modern static website template ready for GitHub Pages.</p>
+        <a href="#about" class="btn btn--primary">Get Started</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title">About</h2>
+        <p class="section__text">
+          This is a fully static HTML/CSS/JS site — no build tools, no frameworks, no dependencies.
+          Drop in your content, push to GitHub, and enable GitHub Pages to go live instantly.
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Features</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card__icon">&#9889;</div>
+            <h3 class="card__title">Fast</h3>
+            <p class="card__text">Pure HTML, CSS, and vanilla JS — zero overhead, instant load times.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">&#128241;</div>
+            <h3 class="card__title">Responsive</h3>
+            <p class="card__text">Looks great on every screen size, from phone to widescreen desktop.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">&#128736;</div>
+            <h3 class="card__title">Customizable</h3>
+            <p class="card__text">Simple CSS variables let you retheme the entire site in seconds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <form class="form" id="contactForm">
+          <div class="form__group">
+            <label class="form__label" for="name">Name</label>
+            <input class="form__input" type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" type="email" id="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="message">Message</label>
+            <textarea class="form__input form__textarea" id="message" placeholder="Say hello..." required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <p class="form__feedback" id="formFeedback" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> MySite. Built with plain HTML, CSS &amp; JS.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
