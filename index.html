@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Static Site</title>
+  <title>Mark M. — AI Engineer</title>
+  <meta name="description" content="Mark M. — AI engineer, builder of intelligent systems. Resume and project portfolio." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
   <header>
     <nav class="nav">
-      <a class="nav__logo" href="#">MySite</a>
+      <a class="nav__logo" href="#">&lt;Mark/&gt;</a>
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#projects">AI Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle menu">&#9776;</button>
@@ -21,50 +23,180 @@
   </header>
 
   <main>
+    <!-- ── Hero with code → binary animation ────────────────────── -->
     <section class="hero">
+      <canvas id="matrixCanvas" class="hero__canvas" aria-hidden="true"></canvas>
       <div class="hero__content">
-        <h1 class="hero__title">Build Something Great</h1>
-        <p class="hero__subtitle">A clean, modern static website template ready for GitHub Pages.</p>
-        <a href="#about" class="btn btn--primary">Get Started</a>
+        <p class="hero__eyebrow">Hello, world.</p>
+        <h1 class="hero__title">I'm Mark.<br/><span class="hero__title-accent">I build with AI.</span></h1>
+        <p class="hero__subtitle">Engineer shipping intelligent systems — from LLM agents to ML pipelines.</p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">See My AI Work</a>
+          <a href="#resume" class="btn btn--ghost">View Resume</a>
+        </div>
       </div>
     </section>
 
+    <!-- ── About ────────────────────────────────────────────────── -->
     <section id="about" class="section">
-      <div class="container">
+      <div class="container container--narrow">
         <h2 class="section__title">About</h2>
         <p class="section__text">
-          This is a fully static HTML/CSS/JS site — no build tools, no frameworks, no dependencies.
-          Drop in your content, push to GitHub, and enable GitHub Pages to go live instantly.
+          I'm an engineer focused on bringing AI products to life — the messy middle
+          between research and reliable shipping software. I build agents, retrieval
+          systems, evaluation pipelines, and the developer tools around them. This
+          site is part résumé, part lab notebook for the projects I'm actively building.
         </p>
+        <ul class="badges">
+          <li class="badge">Python</li>
+          <li class="badge">TypeScript</li>
+          <li class="badge">LLMs</li>
+          <li class="badge">RAG</li>
+          <li class="badge">Agents</li>
+          <li class="badge">.NET</li>
+          <li class="badge">Docker</li>
+          <li class="badge">AWS</li>
+        </ul>
       </div>
     </section>
 
-    <section id="features" class="section section--alt">
+    <!-- ── Resume / Experience ──────────────────────────────────── -->
+    <section id="resume" class="section section--alt">
       <div class="container">
-        <h2 class="section__title">Features</h2>
-        <div class="cards">
-          <div class="card">
-            <div class="card__icon">&#9889;</div>
-            <h3 class="card__title">Fast</h3>
-            <p class="card__text">Pure HTML, CSS, and vanilla JS — zero overhead, instant load times.</p>
+        <h2 class="section__title">Resume</h2>
+
+        <div class="resume">
+          <div class="resume__col">
+            <h3 class="resume__heading">Experience</h3>
+            <div class="timeline">
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <h4 class="timeline__title">AI Engineer</h4>
+                <p class="timeline__meta">Current Role · Present</p>
+                <p class="timeline__text">Designing and shipping LLM-powered features. Building evaluation harnesses, retrieval pipelines, and agentic tooling.</p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <h4 class="timeline__title">Software Engineer</h4>
+                <p class="timeline__meta">Prior Role</p>
+                <p class="timeline__text">Built containerized .NET services with health checks, observability, and CI/CD.</p>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <h4 class="timeline__title">Earlier Work</h4>
+                <p class="timeline__meta">Foundations</p>
+                <p class="timeline__text">Full-stack development across web, cloud, and data tooling.</p>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__icon">&#128241;</div>
-            <h3 class="card__title">Responsive</h3>
-            <p class="card__text">Looks great on every screen size, from phone to widescreen desktop.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">&#128736;</div>
-            <h3 class="card__title">Customizable</h3>
-            <p class="card__text">Simple CSS variables let you retheme the entire site in seconds.</p>
+
+          <div class="resume__col">
+            <h3 class="resume__heading">Skills</h3>
+            <div class="skill">
+              <div class="skill__row"><span>LLM Engineering</span><span>95%</span></div>
+              <div class="skill__bar"><span style="width:95%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill__row"><span>Python / TypeScript</span><span>90%</span></div>
+              <div class="skill__bar"><span style="width:90%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill__row"><span>RAG &amp; Vector Search</span><span>85%</span></div>
+              <div class="skill__bar"><span style="width:85%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill__row"><span>Cloud &amp; DevOps</span><span>80%</span></div>
+              <div class="skill__bar"><span style="width:80%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill__row"><span>Distributed Systems</span><span>75%</span></div>
+              <div class="skill__bar"><span style="width:75%"></span></div>
+            </div>
+
+            <h3 class="resume__heading resume__heading--gap">Education</h3>
+            <p class="resume__edu"><strong>B.S., Computer Science</strong><br/>Your University</p>
+
+            <a href="#" class="btn btn--primary btn--small">Download PDF</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- ── AI Projects ──────────────────────────────────────────── -->
+    <section id="projects" class="section">
       <div class="container">
-        <h2 class="section__title">Contact</h2>
+        <h2 class="section__title">AI Projects</h2>
+        <p class="section__text">A living catalog of what I'm building. Click any card to see details.</p>
+
+        <div class="projects">
+          <article class="project">
+            <div class="project__status project__status--live">Live</div>
+            <h3 class="project__title">Container Health Agent</h3>
+            <p class="project__desc">An LLM agent that monitors Docker container health checks, diagnoses failures, and proposes fixes.</p>
+            <ul class="project__tags">
+              <li>Python</li><li>Docker</li><li>OpenAI</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+
+          <article class="project">
+            <div class="project__status project__status--building">Building</div>
+            <h3 class="project__title">Resume RAG Bot</h3>
+            <p class="project__desc">Retrieval-augmented chatbot trained on my work history — ask it anything about my background.</p>
+            <ul class="project__tags">
+              <li>RAG</li><li>Pinecone</li><li>Claude</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+
+          <article class="project">
+            <div class="project__status project__status--research">Research</div>
+            <h3 class="project__title">Eval Harness</h3>
+            <p class="project__desc">Lightweight framework for benchmarking LLM outputs across tasks with custom rubrics.</p>
+            <ul class="project__tags">
+              <li>TypeScript</li><li>Anthropic SDK</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+
+          <article class="project">
+            <div class="project__status project__status--building">Building</div>
+            <h3 class="project__title">Agent Sandbox</h3>
+            <p class="project__desc">Safe, sandboxed code execution environment for autonomous coding agents.</p>
+            <ul class="project__tags">
+              <li>Docker</li><li>gVisor</li><li>Python</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+
+          <article class="project">
+            <div class="project__status project__status--live">Live</div>
+            <h3 class="project__title">Prompt Library</h3>
+            <p class="project__desc">Versioned, testable prompts with diffing and regression tracking.</p>
+            <ul class="project__tags">
+              <li>TS</li><li>SQLite</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+
+          <article class="project">
+            <div class="project__status project__status--research">Research</div>
+            <h3 class="project__title">Vector Playground</h3>
+            <p class="project__desc">Interactive visualization of embedding spaces and similarity search.</p>
+            <ul class="project__tags">
+              <li>WebGL</li><li>Embeddings</li>
+            </ul>
+            <a href="#" class="project__link">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ──────────────────────────────────────────────── -->
+    <section id="contact" class="section section--alt">
+      <div class="container container--narrow">
+        <h2 class="section__title">Get in Touch</h2>
+        <p class="section__text">Want to collaborate, hire, or just talk shop about AI? Drop a line.</p>
         <form class="form" id="contactForm">
           <div class="form__group">
             <label class="form__label" for="name">Name</label>
@@ -76,7 +208,7 @@
           </div>
           <div class="form__group">
             <label class="form__label" for="message">Message</label>
-            <textarea class="form__input form__textarea" id="message" placeholder="Say hello..." required></textarea>
+            <textarea class="form__input form__textarea" id="message" placeholder="What's up?" required></textarea>
           </div>
           <button class="btn btn--primary" type="submit">Send Message</button>
           <p class="form__feedback" id="formFeedback" hidden></p>
@@ -86,7 +218,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> MySite. Built with plain HTML, CSS &amp; JS.</p>
+    <p>&copy; <span id="year"></span> Mark M. — built with HTML, CSS &amp; vanilla JS.</p>
   </footer>
 
   <script src="js/main.js"></script>

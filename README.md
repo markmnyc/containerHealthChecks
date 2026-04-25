@@ -1,22 +1,25 @@
-# Static Website Template
+# Mark M. — Personal Site
 
-A clean, responsive static website with hero, about, features, and contact sections.
+A combined résumé and AI-projects portfolio with a custom hero animation:
+streams of source code drift down the screen and progressively decay into 1s and 0s.
 
 ## Live on GitHub Pages
 
-1. Go to **Settings → Pages** in this repository
-2. Under **Source**, select the branch `claude/setup-static-website-SE5bb` (or `main` once merged) and root folder `/`
-3. Click **Save** — your site will be live at `https://markmnyc.github.io/containerhealthchecks/`
+The site is served from `main` at the repo root.
+
+- **Settings → Pages → Branch:** `main`, folder `/ (root)`
+- URL: `https://markmnyc.github.io/containerHealthChecks/`
 
 ## Structure
 
 ```
-index.html      Main page
-css/styles.css  All styles (CSS variables for easy theming)
-js/main.js      Nav toggle, contact form, footer year
+index.html      Main page (hero, about, resume, projects, contact)
+css/styles.css  Dark theme with neon accents, CSS variables for theming
+js/main.js      Code → binary canvas animation + page UX
 ```
 
 ## Customization
 
-- Colors: edit the `:root` variables at the top of `css/styles.css`
-- Content: edit `index.html` directly — no build step needed
+- **Colors:** edit the `:root` variables at the top of `css/styles.css`
+- **Animation source code:** edit the `SOURCE_LINES` array at the top of `js/main.js`
+- **Resume / projects content:** edit `index.html` directly — no build step
