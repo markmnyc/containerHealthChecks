@@ -108,6 +108,37 @@ header {
   border-radius: var(--radius);
 }
 
+/* ── Open to work badge ─────────────────────────────────────── */
+.open-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  background: rgba(0, 255, 156, 0.1);
+  border: 1px solid rgba(0, 255, 156, 0.35);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 156, 0.15);
+}
+
+.open-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
 .hero__eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);
@@ -240,6 +271,144 @@ header {
 }
 
 .badge:hover { background: rgba(0, 255, 156, 0.18); }
+
+/* ── Stats bar ──────────────────────────────────────────────── */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.stat:last-child { border-right: none; }
+
+.stat__num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Pillars (What I bring) ─────────────────────────────────── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.pillar:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.pillar__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.pillar__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.pillar__text  { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* ── Timeline bullets ───────────────────────────────────────── */
+.timeline__bullets {
+  list-style: none;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline__bullets li {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.timeline__bullets li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ── Education card ─────────────────────────────────────────── */
+.edu-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.edu-card__degree { font-weight: 700; font-size: 1rem; }
+.edu-card__field  { color: var(--color-text-muted); font-size: 0.9rem; }
+.edu-card__school { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-primary); margin-top: 0.25rem; }
+
+/* ── Strengths list ─────────────────────────────────────────── */
+.strengths {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.strength {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.strength::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Seeking box ────────────────────────────────────────────── */
+.seeking {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  background: rgba(0, 255, 156, 0.06);
+  border-left: 3px solid var(--color-primary);
+  padding: 0.85rem 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.6;
+}
 
 /* ── Resume ─────────────────────────────────────────────────── */
 .resume {
@@ -479,6 +648,10 @@ header {
 /* ── Mobile ─────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   .resume { grid-template-columns: 1fr; gap: 2rem; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .stat:nth-child(odd) { border-right: 1px solid var(--color-border); }
+  .stat:last-child, .stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
 }
 
 @media (max-width: 640px) {
