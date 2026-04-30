@@ -186,13 +186,39 @@ document.querySelectorAll('.nav__links a').forEach(link => {
   });
 });
 
-document.getElementById('contactForm').addEventListener('submit', e => {
+document.getElementById('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
+  const form = e.target;
   const feedback = document.getElementById('formFeedback');
-  feedback.textContent = '> message_received. thanks for reaching out.';
+  const btn = form.querySelector('button[type="submit"]');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      feedback.textContent = '> message_received. I\'ll be in touch soon.';
+      feedback.style.color = 'var(--color-primary)';
+      form.reset();
+    } else {
+      feedback.textContent = '> send failed. Email me directly at your-email@example.com';
+      feedback.style.color = '#f87171';
+    }
+  } catch {
+    feedback.textContent = '> network error. Please try again.';
+    feedback.style.color = '#f87171';
+  }
+
   feedback.hidden = false;
-  e.target.reset();
-  setTimeout(() => { feedback.hidden = true; }, 4000);
+  btn.disabled = false;
+  btn.textContent = 'Send Message';
+  setTimeout(() => { feedback.hidden = true; }, 6000);
 });
 
 /* trigger skill bars when the resume scrolls into view */
