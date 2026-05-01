@@ -8,7 +8,7 @@ streams of source code drift down the screen and progressively decay into 1s and
 The site is served from `main` at the repo root.
 
 - **Settings → Pages → Branch:** `main`, folder `/ (root)`
-- URL: `https://markmnyc.github.io/containerHealthChecks/`
+- URL: `https://markmnyc.github.io/livecv/`
 
 ## Structure
 
